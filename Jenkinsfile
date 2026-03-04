@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone') {
-            steps {
-                git 'https://github.com/shayuga2024-ai/devops-practice.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t devops-app .'
