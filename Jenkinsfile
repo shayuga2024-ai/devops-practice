@@ -3,21 +3,21 @@ pipeline {
 
     stages {
 
-        stage('Build') {
+        stage('Clone') {
             steps {
-                echo 'Building application...'
+                git 'https://github.com/shayuga2024-ai/devops-practice.git'
             }
         }
 
-        stage('Test') {
+        stage('Build Docker Image') {
             steps {
-                echo 'Running tests...'
+                bat 'docker build -t devops-app .'
             }
         }
 
-        stage('Deploy') {
+        stage('Run Container') {
             steps {
-                echo 'Deploying application...'
+                bat 'docker run -d -p 8081:80 devops-app'
             }
         }
 
