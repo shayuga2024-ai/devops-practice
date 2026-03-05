@@ -11,7 +11,7 @@ pipeline {
 
         stage('Run Container') {
             steps {
-                bat 'docker run -d -p 8081:80 devops-app'
+                bat 'docker run -d -p 8082:80 devops-app'
             }
         }
 
